@@ -1,0 +1,14 @@
+{
+  "symbol": "BTCUSDT",
+  "timeframe": "5m",
+  "plusDIThreshold": 15,
+  "minusDIThreshold": 20,
+  "adxMinimum": 15,
+  "takeProfitPercent": 2,
+  "stopLossPercent": 1,
+  "leverage": 10,
+  "quantity": 0.001,
+  "trailingStop": true,
+  "trailingStopPercent": 1.5,
+  "marketDataSource": "binance"
+} 
