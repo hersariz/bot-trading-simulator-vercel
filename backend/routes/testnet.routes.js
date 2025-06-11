@@ -102,4 +102,24 @@ router.post('/run-simulation', (req, res) => {
   }
 });
 
+// GET /api/testnet/status
+router.get('/status', (req, res) => {
+  try {
+    const status = {
+      timestamp: Date.now(),
+      status: 'online',
+      version: '1.0.0',
+      message: 'Testnet API working correctly'
+    };
+    
+    res.status(200).json(status);
+  } catch (error) {
+    console.error('Error in /api/testnet/status endpoint:', error);
+    res.status(500).json({
+      error: error.message || 'Internal server error',
+      endpoint: '/api/testnet/status'
+    });
+  }
+});
+
 module.exports = router; 
