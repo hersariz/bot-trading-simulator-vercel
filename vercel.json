@@ -1,23 +1,19 @@
 {
   "version": 2,
-  "builds": [
+  "buildCommand": "cd bot-trading-simulator/frontend && npm install && npm run build",
+  "outputDirectory": "bot-trading-simulator/frontend/build",
+  "framework": "create-react-app",
+  "routes": [
     { 
-      "src": "backend/server.js", 
-      "use": "@vercel/node"
+      "src": "/api/(.*)", 
+      "dest": "/backend/server.js" 
     },
     {
-      "src": "bot-trading-simulator/frontend/public/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "rewrites": [
-    { 
-      "source": "/api/(.*)", 
-      "destination": "/backend/server.js" 
+      "handle": "filesystem"
     },
     {
-      "source": "/(.*)",
-      "destination": "/bot-trading-simulator/frontend/public/$1"
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ],
   "headers": [
