@@ -6,7 +6,7 @@
       "use": "@vercel/node"
     },
     {
-      "src": "bot-trading-simulator/frontend/**",
+      "src": "bot-trading-simulator/frontend/public/**",
       "use": "@vercel/static"
     }
   ],
@@ -17,7 +17,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/bot-trading-simulator/frontend/$1"
+      "destination": "/bot-trading-simulator/frontend/public/$1"
     }
   ],
   "headers": [
